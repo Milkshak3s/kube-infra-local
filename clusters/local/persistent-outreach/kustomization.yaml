@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: persistent-outreach
+  namespace: persistent-outreach
+spec:
+  interval: 5m
+  path: "./clusters/local/persistent-outreach"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: persistent-outreach
+
