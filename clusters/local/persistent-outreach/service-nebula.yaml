@@ -5,6 +5,7 @@ metadata:
   labels:
     app: nebula
   name: nebula
+  namespace: persistent-outreach
 spec:
   ports:
   - name: 8001-8001
