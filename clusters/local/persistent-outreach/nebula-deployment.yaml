@@ -27,10 +27,20 @@ spec:
         - containerPort: 8001
         resources: {}
         volumeMounts:
-        - name: nebula-config
+        - name: config-secrets
           mountPath: /persistent/config
+        - name: config-names
+          mountPath: /persistent/config/names
+        - name: config-custom-items
+          mountPath: /persistent/config/custom_items
       volumes:
-      - name: nebula-config
+      - name: config-names
+        configMap: 
+          name: names
+      - name: config-custom-items
+        configMap: 
+          name: custom-items
+      - name: config-secrets
         projected:
           sources:
           - secret:
@@ -51,6 +61,8 @@ spec:
               name: config
           - secret:
               name: custom-sprites
+          - secret:
+              name: dbconfig
           - secret:
               name: exoplanet-ruin-blacklist
           - secret:
