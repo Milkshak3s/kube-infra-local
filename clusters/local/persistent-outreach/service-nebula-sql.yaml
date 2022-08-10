@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sql
+  name: sql
+  namespace: persistent-outreach
+spec:
+  ports:
+  - name: 3306-3306
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: nebula-sql
+  type: ClusterIP
+status:
+  loadBalancer: {}
