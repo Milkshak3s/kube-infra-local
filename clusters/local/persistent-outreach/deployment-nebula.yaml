@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nebula
+  name: nebula
+  namespace: persistent-outreach
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nebula
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nebula
+    spec:
+      containers:
+      - image: ghcr.io/persistentss13/nebula:1.12.0
+        command: ["/wait.sh"]
+        args: ["-h", "db", "-p", "3306", "-t", "30", "--", "DreamDaemon", "nebula.dmb", "-port", "8001", "-trusted", "-verbose"]
+        name: nebula
+        ports:
+        - containerPort: 8001
+        resources: {}
+        volumeMounts:
+        - name: nebula-config
+          mountPath: /persistent/config
+      volumes:
+      - name: nebula-config
+        projected:
+          sources:
+          - secret:
+              name: admin-ranks
+          - secret:        
+              name: admins
+          - secret:
+              name: alienwhitelist
+          - secret:
+              name: away-site-blacklist
+          - secret:
+              name: banned-words
+          - secret:
+              name: cag-card-text-black
+          - secret:
+              name: cag-card-text-white
+          - secret:
+              name: config
+          - secret:
+              name: custom-sprites
+          - secret:
+              name: exoplanet-ruin-blacklist
+          - secret:
+              name: game-options
+          - secret:
+              name: holidays
+          - secret:
+              name: jobs
+          - secret:
+              name: moderators
+          - secret:
+              name: motd
+          - secret:
+             name: rules
+          - secret:
+              name: space-ruin-blacklist
+          - secret:
+              name: webhooks
+status: {}
