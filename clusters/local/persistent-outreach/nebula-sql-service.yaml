@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: sql
-  name: sql
+    app: db
+  name: db
   namespace: persistent-outreach
 spec:
   ports:
