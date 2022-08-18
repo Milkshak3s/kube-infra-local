@@ -1,0 +1,33 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: nebula-sql-backup
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: nebula-sql-backup
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          volumes:
+          - name: gcp-serviceaccount
+            secret:
+              secretName: nebula-sql-backup-gcp
+          containers:
+          - image: ghcr.io/persistentss13/nebula-sql-backup:0.0.2
+            name: nebula-sql-backup
+            resources: {}
+            volumeMounts:
+            - name: gcp-serviceaccount
+              readOnly: true
+              mountPath: "/run"
+            envFrom:
+            - secretRef:
+                name: sql-creds
+          restartPolicy: OnFailure
+  schedule: 0 * * * *
+status: {}
