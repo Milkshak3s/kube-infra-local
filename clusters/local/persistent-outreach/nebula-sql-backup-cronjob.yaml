@@ -24,7 +24,6 @@ spec:
             resources: {}
             volumeMounts:
             - name: gcp-serviceaccount
-              readOnly: true
               mountPath: "/run"
             envFrom:
             - secretRef:
