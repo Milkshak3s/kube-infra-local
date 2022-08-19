@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   creationTimestamp: null
   name: nebula-sql-backup
-  namespace: persistent-space
+  namespace: persistent-outreach
 spec:
   jobTemplate:
     metadata:
