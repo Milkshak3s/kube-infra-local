@@ -24,7 +24,7 @@ spec:
             resources: {}
             volumeMounts:
             - name: gcp-serviceaccount
-              mountPath: "/run"
+              mountPath: "/etc/gcp-sa"
             envFrom:
             - secretRef:
                 name: sql-creds
