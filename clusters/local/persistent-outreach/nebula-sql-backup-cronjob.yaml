@@ -1,4 +1,4 @@
-catapiVersion: batch/v1beta1
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   creationTimestamp: null
