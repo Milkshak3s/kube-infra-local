@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+catapiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   creationTimestamp: null
@@ -28,6 +28,8 @@ spec:
             envFrom:
             - secretRef:
                 name: sql-creds
+            - secretRef:
+                name: nebula-sql-backup-gcs
           restartPolicy: OnFailure
   schedule: 0 * * * *
 status: {}
