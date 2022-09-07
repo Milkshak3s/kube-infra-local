@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: discord-opsbot
+  name: discord-opsbot
+  namespace: persistent-outreach
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discord-opsbot
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: discord-opsbot
+    spec:
+      containers:
+      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.2
+        name: outreach-discord-opsbot
+        env:
+        - name: NAMESPACE
+          value: persistent-outreach
+        envFrom:
+        - secretRef:
+            name: discord-opsbot-token
+        resources: {}
+status: {}
