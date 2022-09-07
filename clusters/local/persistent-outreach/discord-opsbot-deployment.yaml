@@ -18,9 +18,16 @@ spec:
       labels:
         app: discord-opsbot
     spec:
+      volumes:
+      - name: discord-opsbot-admins
+        secret:
+          secretName: discord-opsbot-admins
       containers:
       - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.3
         name: outreach-discord-opsbot
+        volumeMounts:
+        - name: discord-opsbot-admins
+          mountPath: "/app"
         env:
         - name: NAMESPACE
           value: persistent-outreach
