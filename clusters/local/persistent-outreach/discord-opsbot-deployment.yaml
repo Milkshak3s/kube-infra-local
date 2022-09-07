@@ -23,7 +23,7 @@ spec:
         secret:
           secretName: discord-opsbot-admins
       containers:
-      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.4
+      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.5
         name: outreach-discord-opsbot
         volumeMounts:
         - name: discord-opsbot-admins
