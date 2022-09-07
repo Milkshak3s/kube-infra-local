@@ -19,7 +19,7 @@ spec:
         app: discord-opsbot
     spec:
       containers:
-      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.2
+      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.3
         name: outreach-discord-opsbot
         env:
         - name: NAMESPACE
