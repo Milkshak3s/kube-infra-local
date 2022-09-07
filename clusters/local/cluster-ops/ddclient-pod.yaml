@@ -18,6 +18,6 @@ spec:
   restartPolicy: Always
   volumes:
   - name: ddclient-conf
-          secret:
-            secretName: ddclient-conf
+    secret:
+      secretName: ddclient-conf
 status: {}
