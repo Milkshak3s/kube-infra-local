@@ -18,6 +18,7 @@ spec:
       labels:
         app: discord-opsbot
     spec:
+      serviceAccountName: discord-opsbot
       volumes:
       - name: discord-opsbot-admins
         secret:
