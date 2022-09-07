@@ -18,6 +18,6 @@ Kubeseal cert + oneliner:
 
 | cluster | ports | reason |
 |:--|:--|:--|
+| local | 8001 | Persistent Outreach SS13 testing |
 | local | 30008 | Persistent Outreach SS13 testing |
-| local | 30010 | Sealed secret public cert |
-| local | 30000-40000 | General use |
+| local | 30009-40000 | General use |
