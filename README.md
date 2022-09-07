@@ -1,4 +1,5 @@
 # kube-infra-local
+This repository represents my personal kubernetes clusters and their workloads. Flux handles keeping the cluster(s) up to date with the yamls in this repo via a pull configuration. To run your workload on my servers, submit a PR!
 
 ## Clusters
 There's only 1 for now:
