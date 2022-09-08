@@ -18,12 +18,13 @@ spec:
       labels:
         app: discord-opsbot
     spec:
+      serviceAccountName: discord-opsbot
       volumes:
       - name: discord-opsbot-admins
         secret:
           secretName: discord-opsbot-admins
       containers:
-      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.7
+      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.8
         name: outreach-discord-opsbot
         volumeMounts:
         - name: discord-opsbot-admins
