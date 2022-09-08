@@ -13,3 +13,10 @@ rules:
   - get
   - list
   - create
+- apiGroups: ""
+  resources:
+  - deployments
+  resourceNames:
+  - discord-opsbot
+  verbs:
+  - get
