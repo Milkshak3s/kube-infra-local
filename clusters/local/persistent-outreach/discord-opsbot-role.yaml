@@ -13,7 +13,8 @@ rules:
   - get
   - list
   - create
-- apiGroups: ""
+- apiGroups:
+  - apps
   resources:
   - deployments
   resourceNames:
