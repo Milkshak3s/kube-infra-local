@@ -9,7 +9,7 @@ metadata:
 spec:
   ports:
   - name: 8001-8001
-    nodePort: 30008
+    nodePort: 8001
     port: 8001
     protocol: TCP
     targetPort: 8001
