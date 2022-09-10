@@ -27,7 +27,7 @@ spec:
         secret:
           secretName: nebula-sql-backup-gcp
       containers:
-      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.12
+      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.13
         name: outreach-discord-opsbot
         volumeMounts:
         - name: discord-opsbot-admins
