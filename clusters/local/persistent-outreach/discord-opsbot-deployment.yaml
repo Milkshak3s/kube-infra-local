@@ -23,12 +23,17 @@ spec:
       - name: discord-opsbot-admins
         secret:
           secretName: discord-opsbot-admins
+      - name: gcp-serviceaccount
+        secret:
+          secretName: nebula-sql-backup-gcp
       containers:
-      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.10
+      - image: ghcr.io/persistentss13/outreach-discord-opsbot:0.0.11
         name: outreach-discord-opsbot
         volumeMounts:
         - name: discord-opsbot-admins
           mountPath: "/app/config"
+        - name: gcp-serviceaccount
+          mountPath: "/etc/gcp-sa"
         env:
         - name: NAMESPACE
           value: persistent-outreach
