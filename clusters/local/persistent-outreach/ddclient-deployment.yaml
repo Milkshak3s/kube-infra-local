@@ -5,7 +5,7 @@ metadata:
   labels:
     app: ddclient
   name: ddclient
-  namespace: cluster-ops
+  namespace: persistent-outreach
 spec:
   replicas: 1
   selector:
