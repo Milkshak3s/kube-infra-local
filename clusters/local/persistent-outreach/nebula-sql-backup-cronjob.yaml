@@ -19,7 +19,7 @@ spec:
             secret:
               secretName: nebula-sql-backup-gcp
           containers:
-          - image: ghcr.io/persistentss13/nebula-sql-backup:0.0.3
+          - image: ghcr.io/persistentss13/nebula-sql-backup:0.0.4
             name: nebula-sql-backup
             resources: {}
             volumeMounts:
