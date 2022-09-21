@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mythic-docs
+  name: mythic-docs
+  namespace: mythic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mythic-docs
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: mythic-docs
+    spec:
+      containers:
+      - image: milkshak3/mythic-docs:v2.3.9
+        name: mythic-docs
+        command:
+        - server
+        resources: {}
+status: {}
