@@ -5,6 +5,7 @@ metadata:
   labels:
     app: mythic-docs
   name: mythic-docs
+  namespace: mythic
 spec:
   ports:
   - name: 5000-5000
