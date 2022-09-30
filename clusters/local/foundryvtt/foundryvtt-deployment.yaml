@@ -22,12 +22,12 @@ spec:
       - name: "remove-lost-found"
         image: "busybox:1.35.0"
         command: ["/bin/sh","-c"]
-        args: ["cp /config/* /shared/"]
+        args: ["mkdir -p /shared/Config && cp /config/* /shared/Config/"]
         volumeMounts:
          - name: config
            mountPath: "/config"
-         - name: config-shared
-           mountPath: "/shared"
+         - name: foundry-data
+           mountPath: "/shared/Config"
       volumes:
       - name: config
         projected:
@@ -36,13 +36,14 @@ spec:
               name: foundryvtt-license
           - configMap:
               name: foundryvtt-config
-      - name: config-shared
-        emptyDir: {}
+      - name: foundry-data
+        persistentVolumeClaim:
+          claimName: foundryvtt-pvc
       containers:
       - image: milkshak3/foundryvtt:10.286
         name: foundryvtt
         resources: {}
         volumeMounts:
-        - name: config-shared
-          mountPath: "/app/foundrydata/Config"
+        - name: foundry-data
+          mountPath: "/app/foundrydata"
 status: {}

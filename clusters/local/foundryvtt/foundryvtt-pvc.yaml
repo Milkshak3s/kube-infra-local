@@ -1,0 +1,13 @@
+iapiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: foundryvtt-pvc
+  namespace: foundryvtt
+  labels:
+    app: foundryvtt
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5000M
