@@ -21,7 +21,7 @@ data:
       "sslKey": null,
       "world": null,
       "serviceConfig": null,
-      "adminPassword": "test"
+      "adminPassword": null
     }
 kind: ConfigMap
 metadata:
