@@ -1,0 +1,29 @@
+apiVersion: v1
+data:
+  options.json: |
+    {
+      "compressStatic": true,
+      "fullscreen": false,
+      "hostname": "localhost",
+      "language": "en.core",
+      "localHostname": "localhost",
+      "port": 8000,
+      "protocol": null,
+      "proxyPort": null,
+      "proxySSL": false,
+      "routePrefix": null,
+      "updateChannel": "stable",
+      "upnp": true,
+      "upnpLeaseDuration": null,
+      "awsConfig": null,
+      "passwordSalt": null,
+      "sslCert": null,
+      "sslKey": null,
+      "world": null,
+      "serviceConfig": null,
+      "adminPassword": "test"
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: foundryvtt-config
