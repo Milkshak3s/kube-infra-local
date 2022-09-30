@@ -18,8 +18,19 @@ spec:
       labels:
         app: foundryvtt
     spec:
+      volumes:
+      - name: config
+        projected:
+          sources:
+          - secret:
+              name: foundryvtt-license
+          - configMap:
+              name: foundryvtt-config
       containers:
       - image: milkshak3/foundryvtt:10.286
         name: foundryvtt
         resources: {}
+        volumeMounts:
+        - name: config
+          mountPath: "/app/foundrydata/Config"
 status: {}
