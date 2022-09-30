@@ -27,7 +27,7 @@ spec:
          - name: config
            mountPath: "/config"
          - name: foundry-data
-           mountPath: "/shared/Config"
+           mountPath: "/shared"
       volumes:
       - name: config
         projected:
