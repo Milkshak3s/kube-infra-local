@@ -19,7 +19,7 @@ spec:
         app: foundryvtt
     spec:
       containers:
-      - image: milkshak3/foundryvtt:latest
+      - image: milkshak3/foundryvtt:10.286
         name: foundryvtt
         resources: {}
 status: {}

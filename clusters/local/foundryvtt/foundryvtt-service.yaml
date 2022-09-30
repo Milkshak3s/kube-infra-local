@@ -8,11 +8,11 @@ metadata:
   namespace: foundryvtt
 spec:
   ports:
-  - name: 8000-30000
+  - name: 8000-8000
     nodePort: 8000
     port: 8000
     protocol: TCP
-    targetPort: 30000
+    targetPort: 8000
   selector:
     app: foundryvtt
   type: NodePort
