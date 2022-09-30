@@ -5,6 +5,7 @@ metadata:
   labels:
     app: foundryvtt
   name: foundryvtt
+  namespace: foundryvtt
 spec:
   ports:
   - name: 8000-30000
