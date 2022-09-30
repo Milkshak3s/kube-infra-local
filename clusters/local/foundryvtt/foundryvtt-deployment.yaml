@@ -18,6 +18,16 @@ spec:
       labels:
         app: foundryvtt
     spec:
+      initContainers:
+      - name: "remove-lost-found"
+        image: "busybox:1.25.0"
+        command: ["/bin/sh","-c"]
+        args: ["cp /config/* /shared/"]
+        volumeMounts:
+         - name: config
+           mountPath: "/config"
+         - name: config-shared
+           mountPath: "/shared"
       volumes:
       - name: config
         projected:
@@ -26,12 +36,13 @@ spec:
               name: foundryvtt-license
           - configMap:
               name: foundryvtt-config
+      - name: config-shared
+        emptyDir: {}
       containers:
       - image: milkshak3/foundryvtt:10.286
         name: foundryvtt
         resources: {}
         volumeMounts:
-        - name: config
+        - name: config-shared
           mountPath: "/app/foundrydata/Config"
-          readOnly: false
 status: {}
