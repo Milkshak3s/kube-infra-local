@@ -19,10 +19,10 @@ spec:
         app: foundryvtt
     spec:
       initContainers:
-      - name: "remove-lost-found"
+      - name: copy-config
         image: "busybox:1.35.0"
         command: ["/bin/sh","-c"]
-        args: ["mkdir -p /shared/Config && cp /config/* /shared/Config/"]
+        args: ["mkdir -p /shared/Config && rsync -a -v --ignore-existing /config /shared/Config"]
         volumeMounts:
          - name: config
            mountPath: "/config"
