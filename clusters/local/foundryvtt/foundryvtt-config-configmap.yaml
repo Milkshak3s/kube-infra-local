@@ -27,3 +27,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: foundryvtt-config
+  namespace: foundryvtt
