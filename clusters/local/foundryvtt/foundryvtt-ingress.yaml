@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: foundryvtt-ingress
   namespace: foundryvtt
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: public
   rules:
