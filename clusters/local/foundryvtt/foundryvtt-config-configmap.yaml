@@ -11,7 +11,7 @@ data:
       "protocol": null,
       "proxyPort": null,
       "proxySSL": false,
-      "routePrefix": null,
+      "routePrefix": "foundry",
       "updateChannel": "stable",
       "upnp": true,
       "upnpLeaseDuration": null,
