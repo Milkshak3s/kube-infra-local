@@ -9,7 +9,7 @@ spec:
   - http:
       paths:
       - path: /foundry
-        pathType: Exact
+        pathType: Prefix
         backend:
           service:
             name: foundryvtt
