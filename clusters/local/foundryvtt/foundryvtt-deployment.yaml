@@ -23,7 +23,7 @@ spec:
       - name: copy-config
         image: "eeacms/rsync:2.4"
         command: ["/bin/sh","-c"]
-        args: ["mkdir -p /shared/Config && rsync -v --ignore-existing /config/* /shared/Config"]
+        args: ["mkdir -p /shared/Config && rsync -v -L --ignore-existing /config/* /shared/Config"]
         volumeMounts:
          - name: config
            mountPath: "/config"
