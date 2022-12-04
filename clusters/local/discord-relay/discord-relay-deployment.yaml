@@ -27,9 +27,9 @@ spec:
           - secret:
               name: relay-channels
       containers:
-      - image: ghcr.io/milkshak3s/py-discord-relay:latest
+      - image: "ghcr.io/milkshak3s/py-discord-relay:0.0.1"
         name: py-discord-relay
-        - envFrom:
+        envFrom:
           - secretRef:
               name: relay-env
         volumeMounts:
