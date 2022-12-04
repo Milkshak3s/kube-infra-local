@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: discord-relay
+  name: discord-relay
+  namespace: discord-relay
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discord-relay
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: discord-relay
+    spec:
+      volumes:
+      - name: config
+        projected:
+          sources:
+          - secret:
+              name: relay-guilds
+          - secret:
+              name: relay-channels
+      containers:
+      - image: ghcr.io/milkshak3s/py-discord-relay:latest
+        name: py-discord-relay
+        - envFrom:
+          - secretRef:
+              name: relay-env
+        volumeMounts:
+        - name: config
+          mountPath: "/app/config"
+        resources: {}
+status: {}
