@@ -11,7 +11,8 @@ spec:
   selector:
     matchLabels:
       app: foundryvtt
-  strategy: {}
+  strategy:
+    type: Recreate
   template:
     metadata:
       creationTimestamp: null
@@ -20,9 +21,9 @@ spec:
     spec:
       initContainers:
       - name: copy-config
-        image: "busybox:1.35.0"
+        image: "eeacms/rsync:2.4"
         command: ["/bin/sh","-c"]
-        args: ["mkdir -p /shared/Config && rsync -a -v --ignore-existing /config /shared/Config"]
+        args: ["mkdir -p /shared/Config && rsync -v -L --ignore-existing /config/* /shared/Config"]
         volumeMounts:
          - name: config
            mountPath: "/config"
