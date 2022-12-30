@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sql
+  name: sql
+  namespace: fleet
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sql
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sql
+    spec:
+      containers:
+      - image: monasca/mysql-init:1.5.5
+        name: sql-init
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: fleet_secrets
+                key: mysql_root_password
+        - name: MYSQL_INIT_HOST
+            valueFrom:
+              secretKeyRef:
+                name: fleet_secrets
+                key: mysql_address
+        - name: MYSQL_INIT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: fleet_secrets
+                key: mysql_username
+        - name: MYSQL_INIT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: fleet_secrets
+                key: mysql_password
+        - name: MYSQL_INIT_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: fleet_secrets
+                key: mysql_database
+      - image: mysql:5.6
+        name: sql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: fleet_secrets
+                key: mysql_root_password
+        ports:
+        - containerPort: 3306
+          name: sql
+        resources: {}
+        volumeMounts:
+        - name: sql-pv
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: sql-pv
+        persistentVolumeClaim:
+          claimName: sql-pvc
+status: {}
