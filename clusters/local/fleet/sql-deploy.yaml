@@ -43,7 +43,7 @@ spec:
               name: fleet_secrets
               key: mysql_password
         - name: MYSQL_INIT_DATABASE
-            valueFrom:
+          valueFrom:
             secretKeyRef:
               name: fleet_secrets
               key: mysql_database
