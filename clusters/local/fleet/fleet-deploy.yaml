@@ -27,27 +27,27 @@ spec:
           - name: FLEET_MYSQL_ADDRESS
             valueFrom:
               secretKeyRef:
-                name: fleet_secrets
+                name: fleet-secrets
                 key: mysql_address
           - name: FLEET_MYSQL_DATABASE
             valueFrom:
               secretKeyRef:
-                name: fleet_secrets
+                name: fleet-secrets
                 key: mysql_database
           - name: FLEET_MYSQL_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: fleet_secrets
+                name: fleet-secrets
                 key: mysql_password
           - name: FLEET_MYSQL_USERNAME
             valueFrom:
               secretKeyRef:
-                name: fleet_secrets
+                name: fleet-secrets
                 key: mysql_username
           - name: FLEET_REDIS_ADDRESS
             valueFrom:
               secretKeyRef:
-                name: fleet_secrets
+                name: fleet-secrets
                 key: redis_address
         volumeMounts:
           - name: tmp
