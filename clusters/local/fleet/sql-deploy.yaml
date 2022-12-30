@@ -25,27 +25,27 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: fleet_secrets
+              name: fleet-secrets
               key: mysql_root_password
         - name: MYSQL_INIT_HOST
           valueFrom:
             secretKeyRef:
-              name: fleet_secrets
+              name: fleet-secrets
               key: mysql_address
         - name: MYSQL_INIT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: fleet_secrets
+              name: fleet-secrets
               key: mysql_username
         - name: MYSQL_INIT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: fleet_secrets
+              name: fleet-secrets
               key: mysql_password
         - name: MYSQL_INIT_DATABASE
           valueFrom:
             secretKeyRef:
-              name: fleet_secrets
+              name: fleet-secrets
               key: mysql_database
       - image: mysql:5.6
         name: sql
@@ -53,8 +53,8 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: fleet_secrets
-              key: mysql_root_password
+              name: fleet-secrets
+              key: mysql_password
         ports:
         - containerPort: 3306
           name: sql
