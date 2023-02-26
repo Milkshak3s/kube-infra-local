@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nebula-sql
+  name: nebula-sql
+  namespace: persistent-outreach-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nebula-sql
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nebula-sql
+    spec:
+      containers:
+      - image: ghcr.io/persistentss13/nebula-sql:1.12.0
+        name: nebula-sql
+        ports:
+        - containerPort: 3306
+        resources: {}
+        volumeMounts:
+        - name: nebula-sql-pv
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: nebula-sql-pv
+        persistentVolumeClaim:
+          claimName: nebula-sql-pvc
+status: {}

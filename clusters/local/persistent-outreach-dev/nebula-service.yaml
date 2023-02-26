@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nebula
+  name: nebula
+  namespace: persistent-outreach-dev
+spec:
+  ports:
+  - name: 8001-8001
+    nodePort: 8001
+    port: 8001
+    protocol: TCP
+    targetPort: 8001
+  selector:
+    app: nebula
+  type: NodePort
+status:
+  loadBalancer: {}
