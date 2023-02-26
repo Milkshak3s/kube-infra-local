@@ -19,7 +19,7 @@ spec:
         app: nebula-sql
     spec:
       containers:
-      - image: ghcr.io/persistentss13/nebula-sql:1.12.0
+      - image: ghcr.io/persistentss13/nebula-sql:1.12.5
         name: nebula-sql
         ports:
         - containerPort: 3306
