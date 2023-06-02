@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frp-two
+  name: frp-two
+  namespace: tunnels
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frp-two
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: frp-two
+    spec:
+      containers:
+      - image: zhangsean/frp:v0.44.0
+        name: frp
+        resources: {}
+        env:
+        - name: MODE
+          value: "two"
+        - name: BIND_PORT
+          value: "6000"
+status: {}
