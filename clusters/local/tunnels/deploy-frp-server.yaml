@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frp-server
+  name: frp-server
+  namespace: tunnels
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frp-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: frp-server
+    spec:
+      containers:
+      - image: zhangsean/frp:v0.44.0
+        name: frp
+        resources: {}
+        env:
+        - name: MODE
+          value: "server"
+        - name: BIND_PORT
+          value: "6000"
+status: {}
