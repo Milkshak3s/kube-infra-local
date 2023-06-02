@@ -4,6 +4,7 @@ metadata:
   labels:
     app: frp-two
   name: frp-two-svc
+  namespace: tunnels
 spec:
   ports:
   - name: 31602-6000

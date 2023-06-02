@@ -5,6 +5,7 @@ metadata:
   labels:
     app: frp-np
   name: frp-np
+  namespace: tunnels
 spec:
   ports:
   - name: 30100-6000
