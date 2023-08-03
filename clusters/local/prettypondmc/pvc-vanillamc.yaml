@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: vanillamc-pvc
-  namespace: persistent-outreach
+  namespace: prettypondmc
   labels:
     app: vanillamc
 spec:
