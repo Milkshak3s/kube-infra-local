@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vanillamc
+  name: vanillamc
+  namespace: prettypondmc
+spec:
+  ports:
+  - name: 25565-25565
+    nodePort: 25565
+    port: 25565
+    protocol: TCP
+    targetPort: 25565
+  selector:
+    app: vanillamc
+  type: NodePort
+status:
+  loadBalancer: {}

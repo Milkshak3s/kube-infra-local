@@ -21,8 +21,7 @@ spec:
       containers:
       - image: itzg/minecraft-server
         name: minecraft-server
-        resources: {}
-	env:
+        env:
 	- name: EULA
           value: "TRUE"
         volumeMounts:
