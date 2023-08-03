@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: vanillamc
   name: vanillamc
@@ -14,7 +13,6 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: vanillamc
     spec:
@@ -22,13 +20,14 @@ spec:
       - image: itzg/minecraft-server
         name: minecraft-server
         env:
-	- name: EULA
+        - name: EULA
           value: "TRUE"
         volumeMounts:
         - name: vanillamc-pv
           mountPath: /data
         resources:
           limits:
+            cpu: 2.0
             memory: 8192Mi
           requests:
             memory: 8192Mi
