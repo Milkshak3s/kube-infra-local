@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vanillamc
+  name: vanillamc
+  namespace: prettypondmc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vanillamc
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vanillamc
+    spec:
+      containers:
+      - image: itzg/minecraft-server
+        name: minecraft-server
+        resources: {}
+	env:
+	- name: EULA
+          value: "TRUE"
+        volumeMounts:
+        - name: vanillamc-pv
+          mountPath: /data
+        resources:
+          limits:
+            memory: 8192Mi
+          requests:
+            memory: 8192Mi
+      volumes:
+      - name: vanillamc-pv
+        persistentVolumeClaim:
+          claimName: vanillamc-pvc
+status: {}
