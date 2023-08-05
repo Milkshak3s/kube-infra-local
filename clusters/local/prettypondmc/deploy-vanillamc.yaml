@@ -22,6 +22,10 @@ spec:
         env:
         - name: EULA
           value: "TRUE"
+        - name: MEMORY
+          value: "8G"
+        - name: MOTD
+          value: "Pretty Pond MC"
         volumeMounts:
         - name: vanillamc-pv
           mountPath: /data
