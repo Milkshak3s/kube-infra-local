@@ -1,0 +1,25 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: teleport
+  namespace: cluster-ops
+spec:
+  interval: 5m0s
+  url: https://charts.releases.teleport.dev
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: teleport-cluster
+  namespace: cluster-ops
+spec:
+  interval: 5m0s
+  chart: teleport-cluster
+  reconcileStrategy: ChartVersion
+  valueFiles:
+    - values-teleport-cluster.yaml
+  sourceRef:
+    kind: HelmRepository
+    name: teleport
+  version: '13.3.0'

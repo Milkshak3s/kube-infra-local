@@ -1,0 +1,4 @@
+clusterName: oakland.milkshakes.cloud
+proxyListenerMode: multiplex
+acme: true
+acmeEmail: selling.milkshak3s@gmail.com

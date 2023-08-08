@@ -12,5 +12,5 @@ spec:
     - values-shak3s-example.yaml
   sourceRef:
     kind: HelmRepository
-    name: shak3s-example
+    name: redteam-charts
   version: '0.1.0'
