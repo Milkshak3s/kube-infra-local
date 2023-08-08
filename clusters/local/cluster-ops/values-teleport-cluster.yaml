@@ -2,3 +2,15 @@ clusterName: oakland.milkshakes.cloud
 proxyListenerMode: multiplex
 acme: true
 acmeEmail: selling.milkshak3s@gmail.com
+publicAddr: ["oakland.milkshakes.cloud:30020"]
+service:
+  type: NodePort
+  ports:
+    - name: tls
+      port: 443
+      targetPort: 3080
+      nodePort: 30020
+      protocol: TCP
+  selector:
+    app: teleport
+  type: NodePort

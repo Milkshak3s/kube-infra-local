@@ -20,4 +20,5 @@ Kubeseal cert + oneliner:
 |:--|:--|:--|
 | local | 8001 | Persistent Outreach SS13 testing |
 | local | 30008 | Persistent Outreach SS13 testing |
+| local | 30020 | teleport cluster |
 | local | 30009-40000 | General use |
