@@ -8,6 +8,8 @@ spec:
   interval: 5m0s
   chart: shak3s-example
   reconcileStrategy: ChartVersion
+  valueFiles:
+    - values-shak3s-example.yaml
   sourceRef:
     kind: HelmRepository
     name: shak3s-example
