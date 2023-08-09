@@ -32,12 +32,11 @@ spec:
     publicAddr: ["oakland.milkshakes.cloud:30020"]
     service:
       type: NodePort
-      ports:
-        - name: tls
-          port: 30020
-          targetPort: 3080
-          nodePort: 30020
-          protocol: TCP
-      selector:
-        app: teleport
+      spec:
+        ports:
+          - name: tls
+            port: 30020
+            targetPort: 3080
+            nodePort: 30020
+            protocol: TCP
 
