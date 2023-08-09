@@ -7,7 +7,7 @@ service:
   type: NodePort
   ports:
     - name: tls
-      port: 443
+      port: 30020
       targetPort: 3080
       nodePort: 30020
       protocol: TCP
