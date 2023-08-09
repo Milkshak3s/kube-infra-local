@@ -33,7 +33,6 @@ spec:
           protocol: TCP
       selector:
         app: teleport
-      type: NodePort
   sourceRef:
     kind: HelmRepository
     name: teleport
