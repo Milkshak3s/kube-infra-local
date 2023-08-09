@@ -21,5 +21,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: bind9-config
+  name: bind-conf
   namespace: cluster-ops
