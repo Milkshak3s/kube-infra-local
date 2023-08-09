@@ -17,7 +17,7 @@ spec:
   interval: 5m0s
   chart: teleport-cluster
   reconcileStrategy: ChartVersion
-  valueFiles:
+  valuesFiles:
     - values-teleport-cluster.yaml
   sourceRef:
     kind: HelmRepository
