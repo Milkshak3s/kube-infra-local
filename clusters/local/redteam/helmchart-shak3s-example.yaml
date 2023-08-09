@@ -1,0 +1,16 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: shak3s-example
+  namespace: redteam
+spec:
+  interval: 5m0s
+  chart: shak3s-example
+  reconcileStrategy: ChartVersion
+  valueFiles:
+    - values-shak3s-example.yaml
+  sourceRef:
+    kind: HelmRepository
+    name: redteam-charts
+  version: '0.1.0'

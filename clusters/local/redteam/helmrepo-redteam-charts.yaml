@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: redteam-charts
+  namespace: redteam
+spec:
+  interval: 5m0s
+  url: https://Milkshak3s.github.io/redteam-charts
