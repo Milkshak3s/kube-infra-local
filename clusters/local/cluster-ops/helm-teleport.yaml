@@ -31,12 +31,4 @@ spec:
     acmeEmail: selling.milkshak3s@gmail.com
     publicAddr: ["oakland.milkshakes.cloud:30020"]
     service:
-      type: NodePort
-      spec:
-        ports:
-          - name: tls
-            port: 30020
-            targetPort: 3080
-            nodePort: 30020
-            protocol: TCP
-
+      type: ClusterIP
