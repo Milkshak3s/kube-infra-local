@@ -5,8 +5,16 @@ metadata:
   name: shak3s-example
   namespace: redteam
 spec:
-  interval: 5m0s
-  chart: shak3s-example
+  interval: 5m
+  chart:
+    spec:
+      chart: shak3s-example
+      version: '0.1.0'
+      sourceRef:
+        kind: HelmRepository
+        name: redteam-charts
+        namespace: redteam
+      interval: 1m
   values:
     # Default values for shak3s-example.
     # This is a YAML-formatted file.
@@ -90,7 +98,3 @@ spec:
     tolerations: []
 
     affinity: {}
-  sourceRef:
-    kind: HelmRepository
-    name: redteam-charts
-  version: '0.1.0'
