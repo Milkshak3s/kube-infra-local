@@ -16,7 +16,6 @@ metadata:
 spec:
   interval: 5m0s
   chart: teleport-cluster
-  reconcileStrategy: ChartVersion
   values:
     clusterName: oakland.milkshakes.cloud
     proxyListenerMode: multiplex
