@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bind9
+  name: bind9
+  namespace: cluster-ops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bind9
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bind9
+    spec:
+     containers:
+     - image: ubuntu/bind9:9.18-22.04_beta
+       name: bind9
+       resources: {}
+       volumeMounts:
+       - name: bind-conf
+         mountPath: /etc/bind
+     dnsPolicy: ClusterFirst
+     restartPolicy: Always
+     volumes:
+     - name: bind-conf
+       configMap:
+        name: bind-conf
+status: {}
