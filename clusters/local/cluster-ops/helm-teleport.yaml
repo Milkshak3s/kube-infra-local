@@ -9,7 +9,7 @@ spec:
   url: https://charts.releases.teleport.dev
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmChart
+kind: HelmRelease
 metadata:
   name: teleport-cluster
   namespace: cluster-ops
