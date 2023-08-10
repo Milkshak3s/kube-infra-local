@@ -27,11 +27,13 @@ spec:
   values:
     clusterName: oakland.milkshakes.cloud
     proxyListenerMode: multiplex
-    highAvailability:
-    certManager:
-      enabled: true
-      addCommonName: true
-      issuerName: letsencrypt-staging
+    acme: true
+    acmeEmail: selling.milkshak3s@gmail.com
+    # highAvailability:
+    # certManager:
+    #   enabled: true
+    #   addCommonName: true
+    #   issuerName: letsencrypt-production
     publicAddr: ["oakland.milkshakes.cloud:30020"]
     service:
       type: ClusterIP
