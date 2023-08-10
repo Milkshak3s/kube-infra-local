@@ -18,6 +18,7 @@ spec:
     spec:
       containers:
       - image: busybox
+        command: ["sleep", "10000"]
         name: busybox
         resources: {}
 status: {}
