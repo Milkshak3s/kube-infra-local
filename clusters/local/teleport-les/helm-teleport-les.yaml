@@ -1,9 +1,18 @@
 ---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: teleport
+  namespace: teleport-les
+spec:
+  interval: 5m0s
+  url: https://charts.releases.teleport.dev
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: teleport-cluster-les
-  namespace: cluster-ops
+  namespace: teleport-les
 spec:
   interval: 5m
   chart:
@@ -21,10 +30,10 @@ spec:
     # acme: true
     # acmeEmail: selling.milkshak3s@gmail.com
     highAvailability:
-    certManager:
-      enabled: true
-      addCommonName: true
-      issuerName: letsencrypt-staging
-    publicAddr: ["oakland.milkshakes.cloud:30021"]
+      certManager:
+        enabled: true
+        addCommonName: true
+        issuerName: letsencrypt-staging
+      publicAddr: ["oakland.milkshakes.cloud:30021"]
     service:
       type: ClusterIP

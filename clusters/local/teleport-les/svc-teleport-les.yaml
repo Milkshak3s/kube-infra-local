@@ -5,7 +5,7 @@ metadata:
   labels:
     app: teleport-cluster-les
   name: teleport-cluster-nodeport-les
-  namespace: cluster-ops
+  namespace: teleport-les
 spec:
   ports:
     - name: tls
