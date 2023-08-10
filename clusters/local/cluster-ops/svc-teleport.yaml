@@ -10,7 +10,7 @@ spec:
   ports:
     - name: tls
       port: 30020
-      targetPort: 3080
+      targetPort: 3026
       nodePort: 30020
       protocol: TCP
   selector:
