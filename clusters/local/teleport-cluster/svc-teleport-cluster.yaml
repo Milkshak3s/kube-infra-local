@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: teleport-cluster-prod
+  name: teleport-cluster-nodeport-prod
+  namespace: teleport-les
+spec:
+  ports:
+    - name: tls
+      port: 30023
+      targetPort: 3080
+      nodePort: 30023
+      protocol: TCP
+  selector:
+    app.kubernetes.io/component: proxy
+    app.kubernetes.io/instance: teleport-cluster
+    app.kubernetes.io/name: teleport-cluster-prod
+  type: NodePort
+status:
+  loadBalancer: {}

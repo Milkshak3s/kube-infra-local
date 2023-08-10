@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: teleport-cluster
+spec: {}
+status: {}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: teleport
+  namespace: teleport-cluster
+spec:
+  interval: 5m0s
+  url: https://charts.releases.teleport.dev
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: teleport-cluster-prod
+  namespace: teleport-cluster
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: teleport-cluster
+      version: '13.3.0'
+      sourceRef:
+        kind: HelmRepository
+        name: teleport
+        namespace: cluster-ops
+      interval: 1m
+  values:
+    clusterName: oakland.milkshakes.cloud
+    proxyListenerMode: multiplex
+    highAvailability:
+      certManager:
+        enabled: true
+        addCommonName: true
+        issuerName: letsencrypt-prod
+        issuerKind: ClusterIssuer
+      publicAddr: ["oakland.milkshakes.cloud:30023"]
+    service:
+      type: ClusterIP
