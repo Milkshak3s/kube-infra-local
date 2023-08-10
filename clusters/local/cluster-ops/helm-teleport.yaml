@@ -27,8 +27,8 @@ spec:
   values:
     clusterName: oakland.milkshakes.cloud
     proxyListenerMode: multiplex
-    acme: true
-    acmeEmail: selling.milkshak3s@gmail.com
+    # acme: true
+    # acmeEmail: selling.milkshak3s@gmail.com
     publicAddr: ["oakland.milkshakes.cloud:30020"]
     service:
       type: ClusterIP
