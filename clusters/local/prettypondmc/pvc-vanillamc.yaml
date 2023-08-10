@@ -8,6 +8,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
+  volumeName: pvc-b2914ca3-4ef1-4afb-8b55-ead63c1f370c
   resources:
     requests:
       storage: 40000M
