@@ -9,9 +9,9 @@ metadata:
 spec:
   ports:
     - name: tls
-      port: 30021
+      port: 30022
       targetPort: 3080
-      nodePort: 30021
+      nodePort: 30022
       protocol: TCP
   selector:
     app.kubernetes.io/component: proxy

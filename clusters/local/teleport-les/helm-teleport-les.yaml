@@ -40,6 +40,6 @@ spec:
         enabled: true
         addCommonName: true
         issuerName: letsencrypt-staging
-      publicAddr: ["oakland.milkshakes.cloud:30021"]
+      publicAddr: ["oakland.milkshakes.cloud:30022"]
     service:
       type: ClusterIP
