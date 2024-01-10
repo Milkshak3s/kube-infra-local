@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: turbo-teamspeak-pvc
-  namespace: turbo-ts
+  name: turbo-mumble-pvc
+  namespace: turbo-mbl
   labels:
-    app: turbo-teamspeak
+    app: turbo-mumble
 spec:
   accessModes:
     - ReadWriteOnce

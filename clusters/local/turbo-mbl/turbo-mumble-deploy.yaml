@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: turbo-mumble
+  name: turbo-mumble
+  namespace: turbo-mbl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: turbo-mumble
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: turbo-mumble
+    spec:
+      containers:
+      - image: mumblevoip/mumble-server:v1.4.230-6
+        name: mumble
+        ports:
+        - containerPort: 64738
+        - containerPort: 64738 
+          protocol: UDP
+        resources: {}
+status: {}
