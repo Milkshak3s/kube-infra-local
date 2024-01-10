@@ -18,10 +18,6 @@ spec:
       labels:
         app: turbo-teamspeak
     spec:
-      volumes:
-      - name: turbo-teamspeak-pv
-        persistentVolumeClaim:
-          claimName: turbo-teamspeak-pvc
       containers:
       - image: teamspeak:3.13.7
         name: teamspeak
@@ -33,8 +29,5 @@ spec:
         - containerPort: 30033
         - containerPort: 9987 
           protocol: UDP
-        volumeMounts:
-        - name: turbo-teamspeak-pv
-          mountPath: /opt/ts3server/sql
         resources: {}
 status: {}
