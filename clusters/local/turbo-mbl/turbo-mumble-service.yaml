@@ -8,13 +8,13 @@ metadata:
   namespace: turbo-mbl
 spec:
   ports:
-  - name: 64738-64738
-    nodePort: 64738
+  - name: 64738-39000
+    nodePort: 39000
     port: 64738
     protocol: TCP
     targetPort: 64738
-  - name: 64738-64738-udp
-    nodePort: 64738
+  - name: 64738-39000-udp
+    nodePort: 39000
     port: 64738
     protocol: UDP
     targetPort: 64738
