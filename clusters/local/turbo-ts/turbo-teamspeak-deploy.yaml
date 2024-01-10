@@ -25,6 +25,9 @@ spec:
       containers:
       - image: teamspeak:3.13.7
         name: teamspeak
+        env:
+        - name: TS3SERVER_LICENSE
+          value: accept
         ports:
         - containerPort: 10011
         - containerPort: 30033
