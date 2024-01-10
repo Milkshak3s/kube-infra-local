@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: turbo-teamspeak
+  name: turbo-teamspeak
+  namespace: turbo-ts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: turbo-teamspeak
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: turbo-teamspeak
+    spec:
+      volumes:
+      - name: turbo-teamspeak-pv
+        persistentVolumeClaim:
+          claimName: turbo-teamspeak-pvc
+      containers:
+      - image: teamspeak:3.13.7
+        name: teamspeak
+        ports:
+        - containerPort: 10011
+        - containerPort: 30033
+        - containerPort: 9987 
+          protocol: UDP
+        volumeMounts:
+        - name: turbo-teamspeak-pv
+          mountPath: /opt/ts3server/sql
+        resources: {}
+status: {}
