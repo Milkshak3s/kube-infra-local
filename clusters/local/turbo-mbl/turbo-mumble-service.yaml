@@ -8,16 +8,16 @@ metadata:
   namespace: turbo-mbl
 spec:
   ports:
-  - name: 65738-65738
-    nodePort: 65738
-    port: 65738
+  - name: 64738-64738
+    nodePort: 64738
+    port: 64738
     protocol: TCP
-    targetPort: 65738
-  - name: 9987-9987-udp
-    nodePort: 65738
-    port: 65738
+    targetPort: 64738
+  - name: 64738-64738-udp
+    nodePort: 64738
+    port: 64738
     protocol: UDP
-    targetPort: 65738
+    targetPort: 64738
   selector:
     app: turbo-mumble
   type: NodePort
