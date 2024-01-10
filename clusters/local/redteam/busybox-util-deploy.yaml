@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: busybox-util
+  name: busybox-util
+  namespace: redteam
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-util
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: busybox-util
+    spec:
+      containers:
+      - image: busybox
+        command: ["sleep", "10000"]
+        name: busybox
+        resources: {}
+status: {}

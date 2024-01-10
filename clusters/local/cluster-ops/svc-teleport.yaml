@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: teleport-cluster
+  name: teleport-cluster-nodeport
+  namespace: cluster-ops
+spec:
+  ports:
+    - name: tls
+      port: 30020
+      targetPort: 3080
+      nodePort: 30020
+      protocol: TCP
+  selector:
+    app.kubernetes.io/component: proxy
+    app.kubernetes.io/instance: teleport-cluster
+    app.kubernetes.io/name: teleport-cluster
+  type: NodePort
+status:
+  loadBalancer: {}
