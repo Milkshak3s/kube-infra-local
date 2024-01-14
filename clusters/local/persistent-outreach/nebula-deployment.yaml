@@ -19,7 +19,7 @@ spec:
         app: nebula
     spec:
       containers:
-      - image: ghcr.io/persistentss13/nebula:sha-4fe406dc8b6ec4a3b7ddab506d1b6b37074b7d62
+      - image: ghcr.io/persistentss13/nebula:sha-95095ba0c3887e3e8b2834b2dc773e106e6b7e53
         command: ["/wait.sh"]
         args: ["-h", "db", "-p", "3306", "-t", "30", "--", "DreamDaemon", "nebula.dmb", "-port", "8001", "-trusted", "-verbose"]
         name: nebula
