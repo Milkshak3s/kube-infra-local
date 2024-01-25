@@ -28,6 +28,8 @@ spec:
     clusterName: teleport.milkshakes.cloud
     acme: true
     acmeEmail: selling.milkshak3s@gmail.com
+    persistence:
+      storageClassName: piraeus-storage
     # highAvailability:
     # certManager:
     #   enabled: true
