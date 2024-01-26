@@ -5,6 +5,7 @@ metadata:
   name: grafana-pvc
   namespace: grafana
 spec:
+  storageClass: piraeus-storage
   accessModes:
     - ReadWriteOnce
   resources:
@@ -78,7 +79,7 @@ metadata:
     metallb.universe.tf/address-pool: private-pool
 spec:
   ports:
-    - port: 3000
+    - port: 80
       protocol: TCP
       targetPort: http-grafana
   selector:
