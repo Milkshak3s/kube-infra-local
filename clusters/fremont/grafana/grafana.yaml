@@ -5,7 +5,7 @@ metadata:
   name: grafana-pvc
   namespace: grafana
 spec:
-  storageClass: piraeus-storage
+  storageClassName: piraeus-storage
   accessModes:
     - ReadWriteOnce
   resources:
