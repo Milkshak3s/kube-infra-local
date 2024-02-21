@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: marketing-site-svc
+  namespace: marketing
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: marketing-site
+  type: LoadBalancer
