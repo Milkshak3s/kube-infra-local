@@ -9,4 +9,4 @@ spec:
     targetPort: 80
   selector:
     app: marketing-site
-  type: LoadBalancer
+  type: ClusterIP
