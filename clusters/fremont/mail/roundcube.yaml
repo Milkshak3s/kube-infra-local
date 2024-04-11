@@ -142,7 +142,7 @@ spec:
     spec:
       containers:
       - name: roundcubemail
-        image: roundcube/roundcubemail:latest-fpm-alpine
+        image: roundcube/roundcubemail:latest
         imagePullPolicy: "IfNotPresent"
         env:
         - name: ROUNDCUBEMAIL_DB_TYPE
@@ -175,7 +175,7 @@ spec:
         - name: ROUNDCUBEMAIL_PLUGINS
           value: archive,zipdownload,newmail_notifier
         ports:
-        - containerPort: 9000
+        - containerPort: 80
         volumeMounts:
         - mountPath: /var/www/html
           name: www-data
