@@ -19,6 +19,8 @@ spec:
       containers:
       - image: itzg/minecraft-server
         name: minecraft-server
+        tty: true
+        stdin: true
         env:
         - name: EULA
           value: "TRUE"
