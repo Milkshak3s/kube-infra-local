@@ -8,12 +8,11 @@ metadata:
 spec:
   ports:
   - name: 25565-25565
-    nodePort: 25565
     port: 25565
     protocol: TCP
     targetPort: 25565
   selector:
     app: vanillamc
-  type: NodePort
+  type: ClusterIP
 status:
   loadBalancer: {}
