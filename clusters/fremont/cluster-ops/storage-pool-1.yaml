@@ -3,6 +3,25 @@ kind: LinstorSatelliteConfiguration
 metadata:
   name: storage-pool
 spec:
+  properties:
+    - name: Aux/drive-type
+      valueFrom:
+        nodeFieldRef: metadata.labels['drive-type']
+    - name: Aux/raid-level
+      valueFrom:
+        nodeFieldRef: metadata.labels['raid-level']
+    - name: Aux/datacenter
+      valueFrom:
+        nodeFieldRef: metadata.labels['datacenter']
+    - name: Aux/rack
+      valueFrom:
+        nodeFieldRef: metadata.labels['rack']
+    - name: Aux/physical-host
+      valueFrom:
+        nodeFieldRef: metadata.labels['physical-host']
+    - name: Aux/vm-host
+      valueFrom:
+        nodeFieldRef: metadata.labels['vm-host']
   storagePools:
     - name: pool1
       fileThinPool:
