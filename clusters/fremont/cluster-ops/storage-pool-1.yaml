@@ -4,22 +4,22 @@ metadata:
   name: storage-pool
 spec:
   properties:
-    - name: Aux/drive-type
+    - name: Aux/topology/drive-type
       valueFrom:
         nodeFieldRef: metadata.labels['drive-type']
-    - name: Aux/raid-level
+    - name: Aux/topology/raid-level
       valueFrom:
         nodeFieldRef: metadata.labels['raid-level']
-    - name: Aux/datacenter
+    - name: Aux/topology/datacenter
       valueFrom:
         nodeFieldRef: metadata.labels['datacenter']
-    - name: Aux/rack
+    - name: Aux/topology/rack
       valueFrom:
         nodeFieldRef: metadata.labels['rack']
-    - name: Aux/physical-host
+    - name: Aux/topology/physical-host
       valueFrom:
         nodeFieldRef: metadata.labels['physical-host']
-    - name: Aux/vm-host
+    - name: Aux/topology/vm-host
       valueFrom:
         nodeFieldRef: metadata.labels['vm-host']
   storagePools:
